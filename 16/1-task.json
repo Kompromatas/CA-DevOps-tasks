@@ -1,0 +1,25 @@
+{
+    "name": "Jonas",
+    "surname": "Pavardenis",
+    "age": 25,
+    "address": {
+        "street": "Pagrindine g.",
+        "houseNumber": 10,
+        "city": "Vilnius",
+        "postalCode": "LT-01100"
+    },
+    "email" : "jonas@pavardenis.lt",
+    "courses" : {
+        "teise": {
+            "name": "JavaScript Basics",
+            "duration": "4 weeks",
+            "instructor": "John Doe"
+        },
+        "politics": {
+            "name": "Advanced JavaScript",
+            "duration": "6 weeks",
+            "instructor": "Jane Smith"
+        }
+    }
+
+}
