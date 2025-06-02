@@ -14,3 +14,4 @@ replace_word() {
     echo "Word '$WORD1' replaced with '$WORD2' in $FILE !!!!!"
 }
 
+replace_word $1 $2 $3
