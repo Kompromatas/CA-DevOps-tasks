@@ -1,0 +1,14 @@
+default: &default
+  course: Math
+  length: 10
+
+student:
+  <<: *default
+  name: Jonas
+  surname: Pavardenis
+  age: 25
+student:
+  <<: *default
+  name: John
+  surname: Smith
+  age: 30
