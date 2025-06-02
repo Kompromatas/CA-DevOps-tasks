@@ -2,12 +2,13 @@ default: &default
   course: Math
   length: 10
 
-student:
+student1:
   <<: *default
   name: Jonas
   surname: Pavardenis
   age: 25
-student:
+
+student2:
   <<: *default
   name: John
   surname: Smith
