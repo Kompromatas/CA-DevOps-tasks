@@ -1,0 +1,16 @@
+#!/bin/bash
+
+replace_word() {
+    local FILE=$1
+    local WORD1=$2
+    local WOED2=$3
+
+    # Replace word using yq
+    yq eval 'walk(if type == "string" then gsub("'"$WORD1"'"; "'"$WORD2"'") else . end)' "$FILE" > temp.yaml && mv temp.yaml "$FILE"
+
+    # Print the updated YAML
+    cat "$FILE"
+
+    echo "Word '$WORD1' replaced with '$WORD2' in $FILE !!!!!"
+}
+
