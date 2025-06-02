@@ -11,3 +11,4 @@ jq --arg target "$WORD1" --arg replace "$WORD2" '
 ' "$FILE" > temp.json && mv temp.json "$FILE"
 
 echo "✅ '$WORD1' replaced with '$WORD2' in $FILE"
+jq . "$FILE"  # Display the updated JSON file
