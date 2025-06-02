@@ -7,7 +7,7 @@
             "street": "Pagrindine g.",
             "houseNumber": 10,
             "city": "Vilnius",
-            "postalCode": "LT-01100"
+            "country": "Lithuania"
         },
         "email" : "jonas@pavardenis.lt",
         "courses" : {
