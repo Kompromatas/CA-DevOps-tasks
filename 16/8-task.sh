@@ -9,7 +9,8 @@ replace_word() {
     #yq eval 'walk(if type == "string" then gsub("'"$WORD1"'"; "'"$WORD2"'") else . end)' "$FILE" > temp.yaml && mv temp.yaml "$FILE"
     #yq eval '(.. | select(tag == "!!str") |= sub("'"$WORD1"'"; "'"$WORD2"'"))' "$FILE" > temp.yaml && mv temp.yaml "$FILE"
     #yq eval "(.. | select(tag == \"!!str\") |= sub(\"$WORD1\"; \"$WORD2\"))" "$FILE" > temp.yaml && mv temp.yaml "$FILE"
-    yq eval "(.[] | .. | select(tag == \"!!str\") |= sub(\"$TARGET_WORD\"; \"$REPLACEMENT_WORD\"))" "$FILE" > temp.yaml && mv temp.yaml "$FILE"
+    #yq eval "(.[] | .. | select(tag == \"!!str\") |= sub(\"$TARGET_WORD\"; \"$REPLACEMENT_WORD\"))" "$FILE" > temp.yaml && mv temp.yaml "$FILE"
+    yq e ".$WORD1 = \"$WORD\"" -i "$input_file"
 
 
     # Print the updated YAML
