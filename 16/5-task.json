@@ -1,4 +1,53 @@
 {
     "$schema": "https://json-schema.org/draft/2025-06/schema#",
-    
+    "type": "object",
+    "properties": {
+        "student": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "surname": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "street": {
+                            "type": "string"
+                        },
+                        "houseNumber": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "city": {
+                            "type": "string"
+                        },
+                        "country": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["street", "houseNumber", "city", "country"]
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "courses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": ["name", "surname", "age", "address", "email", "courses"]
+        }
+    },
+    "required": ["student"]
 }
