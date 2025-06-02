@@ -10,7 +10,7 @@ replace_word() {
     #yq eval '(.. | select(tag == "!!str") |= sub("'"$WORD1"'"; "'"$WORD2"'"))' "$FILE" > temp.yaml && mv temp.yaml "$FILE"
     #yq eval "(.. | select(tag == \"!!str\") |= sub(\"$WORD1\"; \"$WORD2\"))" "$FILE" > temp.yaml && mv temp.yaml "$FILE"
     #yq eval "(.[] | .. | select(tag == \"!!str\") |= sub(\"$TARGET_WORD\"; \"$REPLACEMENT_WORD\"))" "$FILE" > temp.yaml && mv temp.yaml "$FILE"
-    yq e ".$WORD1 = \"$WORD\"" -i "$input_file"
+    sed -i.bak "s/\b${WORD1}\b/${WORD2}/g" "$input_file"
 
 
     # Print the updated YAML
