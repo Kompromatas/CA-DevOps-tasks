@@ -10,17 +10,11 @@
             "country": "Lithuania"
         },
         "email" : "jonas@pavardenis.lt",
-        "courses" : {
-            "teise": {
-                "name": "JavaScript Basics",
-                "duration": "4 weeks",
-                "instructor": "John Doe"
-            },
-            "politics": {
-                "name": "Advanced JavaScript",
-                "duration": "6 weeks",
-                "instructor": "Jane Smith"
-            }
-        }
+        "courses" : [
+            "teise",
+            "politics",
+            "economics",
+            "history"
+        ]
     }
 }

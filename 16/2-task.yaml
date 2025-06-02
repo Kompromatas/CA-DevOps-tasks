@@ -9,11 +9,7 @@ student:
     country: Lithuania
   email: jonas@pavardenis.lt
   couses:
-    teise:
-      name: "JavaScript Basics"
-      duretion: "4 weeks"
-      instructor: "John Doe"
-    politics:
-      name: "Advanced JavaScript"
-      duretion: "6 weeks"
-      instructor: "Jane Smith"
+    - teise
+    - politics
+    - economics
+    - history
