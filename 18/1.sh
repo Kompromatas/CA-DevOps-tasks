@@ -23,3 +23,4 @@ az vm create \
   --nsg nsg18  
 
 az storage blob upload --account-name storageacc181 --container-name blob18 --file ./1.sh --name azure-1.sh
+
