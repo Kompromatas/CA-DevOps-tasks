@@ -1,4 +1,5 @@
 #! /bin/bash    
+
 GROUP='ca-devops-1'
 LOCATION='eastus'
 IMAGE='Canonical:ubuntu-24_04-lts:server:latest'
