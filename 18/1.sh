@@ -6,7 +6,7 @@ SIZE='Standard_B1s'
 
 az storage account create --name storageacc181 --resource-group $GROUP --location $LOCATION --sku Standard_LRS
 
-az storage container create -- name blob18 --account-name storageacc181 --public-access blob
+az storage container create --name blob18 --account-name storageacc181
 
 az network nsg create --resource-group $GROUP --name nsg18
 
@@ -22,3 +22,4 @@ az vm create \
   --size $SIZE \
   --nsg nsg18  
 
+az storage blob upload --account-name storageacc181 --container-name blob18 --file ./1.sh --name azure-1.sh
