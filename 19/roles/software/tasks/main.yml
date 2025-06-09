@@ -1,0 +1,11 @@
+- name: Install Nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install Net-tools
+  ansible.builtin.apt:
+    name: net-tools
+    state: present
+  when: ansible_os_family == "Debian"

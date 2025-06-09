@@ -1,0 +1,17 @@
+---
+- name: Playbook - Pamoka 19
+  hosts: all
+  vars_files:
+    - secrets.yml
+  become: true
+  tasks:
+    - name: Task - 2 
+      ansible.builtin.yum:
+        name: nmap
+        state: present
+      when: ansible_os_family == "RedHat"
+    - name: Task - 3
+      ansible.builtin.apt:
+        name: nmap
+        state: present
+      when: ansible_os_family == "Debian" 
