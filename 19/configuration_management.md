@@ -202,5 +202,3 @@ output "public_subnet_id" {
 ```
 
 ---
-
-Both Ansible and Terraform are essential tools for modern DevOps workflows, enabling automation, repeatability, and scalability in infrastructure and configuration management.
