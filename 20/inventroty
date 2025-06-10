@@ -1,0 +1,10 @@
+all:
+    hosts:
+        azurevm1:
+            ansible_host: 172.178.68.193
+            ansible _port: 22
+            tags: Production
+#        ubuntu:
+#          ansible_port: 2222
+#          ansible_host: 127.0.0.1
+#          tags: Development

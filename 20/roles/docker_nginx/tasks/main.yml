@@ -1,0 +1,89 @@
+---
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install reqired packages
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+    state: present
+
+- name: Add Docker GPG key
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker repository
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Install Docker and Docker CLI
+  ansible.builtin.apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+    update_cache: yes
+
+- name: Ensure Docker service is running
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Install Docker Python module
+  ansible.builtin.pip:
+    name: docker
+    executable: pip3
+
+- name: Create directory for Nginx HTML files
+  ansible.builtin.file:
+    path: /var/www/html
+    state: directory
+    mode: '0755'
+
+- name: Copy index.html to hosts
+  ansible.builtin.copy:
+    src: index.html
+    dest: /var/www/html/index.html
+    mode: '0644'
+
+- name: Test Docker socket
+  ansible.builtin.command: docker ps
+  register: docker_test
+  ignore_errors: true
+
+- name: show Docker test result
+  ansible.builtin.debug:
+    var: docker_test
+#    msg: "Docker test output: {{ docker_test.stdout }}"
+
+#- name: Pull Nginx Docker image
+#  community.docker.docker_image:
+#    name: nginx
+#    source: pull
+
+#- name: Run Nginx container
+#  community.docker.docker_container:
+#    name: nginx
+#    image: nginx:latest
+#    state: started
+#    restart_policy: always
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - /var/www/html:/usr/share/nginx/html
+
+- name: Run Nginx container via cli
+  ansible.builtin.command: >
+    docker run --name nginx -d -p 80:80
+    -v /var/www/html:/usr/share/nginx/html nginx:latest
+  register: nginx_container
+  
