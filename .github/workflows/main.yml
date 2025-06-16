@@ -15,7 +15,7 @@ jobs:
             uses: actions/checkout@v4.2.2
           
           - name: Run build
-            run: docker build -t dp/ca-devops:latest ./21/
+            run: docker build -t kompromatas/ca-devops:latest ./21/
 
           - name: Debug secrets (for testing only)
             run: |
