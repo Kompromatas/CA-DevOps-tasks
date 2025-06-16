@@ -37,6 +37,8 @@ jobs:
             username: ${{ secrets.AZURE_VM_USERNAME }}
             password: ${{ secrets.AZURE_VM_PASSWORD }}
             script: |
+              apt-get update
+              apt-get install -y docker.io
               docker pull kompromatas/nginx:latest
               docker run -d -p 80:80 --name ca-devops kompromatas/nginx:latest
               docker ps
