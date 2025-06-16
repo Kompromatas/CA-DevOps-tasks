@@ -1,4 +1,4 @@
-name: 2-22 task CI/CD
+name: 21-22 task CI/CD
 on:
     push:
         branches:
