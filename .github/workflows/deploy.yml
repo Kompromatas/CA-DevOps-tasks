@@ -35,7 +35,7 @@ jobs:
           with:
             host: ${{ secrets.AZURE_VM_IP }}
             username: ${{ secrets.AZURE_VM_USERNAME }}
-            key: ${{ secrets.AZURE_VM_PASSWORD }}
+            password: ${{ secrets.AZURE_VM_PASSWORD }}
             script: |
               docker pull kompromatas/nginx:latest
               docker run -d -p 80:80 --name ca-devops kompromatas/nginx:latest
