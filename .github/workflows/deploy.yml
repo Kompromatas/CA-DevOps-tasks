@@ -38,6 +38,8 @@ jobs:
             password: ${{ secrets.AZURE_VM_PASSWORD }}
             script: |
               sudo docker pull kompromatas/nginx:latest
+              sudo docker stop nginx || true
+              sudo docker rm nginx || true
               sudo docker run -d -p 80:80 --name ca-devops kompromatas/nginx:latest
               sudo docker ps
 
