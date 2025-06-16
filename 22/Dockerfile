@@ -1,5 +1,5 @@
 # Use the official NGINX base image
-FROM nginx:alpine
+FROM nginx:latest
 
 # Copy your custom index.html to the default NGINX public directory
 COPY index.html /usr/share/nginx/html/index.html
