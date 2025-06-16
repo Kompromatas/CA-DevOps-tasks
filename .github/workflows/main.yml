@@ -39,7 +39,7 @@ jobs:
           run: docker run --rm kompromatas/ca-devops:latest /app/test.sh
           
         - name: Upload test results
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
             name: test-results    
 
