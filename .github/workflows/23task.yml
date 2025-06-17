@@ -26,7 +26,7 @@ jobs:
     
     Azure-VM:
         runs-on: ubuntu-latest
-        needs: 
+        needs: Build
         steps:
             - name: Checkout code
               uses: actions/checkout@v4.2.2
