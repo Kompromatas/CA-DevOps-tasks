@@ -43,26 +43,26 @@
     name: docker
     executable: pip3
 
-- name: Create directory for Nginx HTML files
-  ansible.builtin.file:
-    path: /var/www/html
-    state: directory
-    mode: '0755'
+#- name: Create directory for Nginx HTML files
+#  ansible.builtin.file:
+#    path: /var/www/html
+#    state: directory
+#    mode: '0755'
 
-- name: Copy index.html to hosts
-  ansible.builtin.copy:
-    src: index.html
-    dest: /var/www/html/index.html
-    mode: '0644'
+#- name: Copy index.html to hosts
+#  ansible.builtin.copy:
+#    src: index.html
+#    dest: /var/www/html/index.html
+#    mode: '0644'
 
-- name: Test Docker socket
-  ansible.builtin.command: docker ps
-  register: docker_test
-  ignore_errors: true
+#- name: Test Docker socket
+#  ansible.builtin.command: docker ps
+#  register: docker_test
+#  ignore_errors: true
 
-- name: show Docker test result
-  ansible.builtin.debug:
-    var: docker_test
+#- name: show Docker test result
+#  ansible.builtin.debug:
+#    var: docker_test
 #    msg: "Docker test output: {{ docker_test.stdout }}"
 
 #- name: Pull Nginx Docker image
