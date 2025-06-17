@@ -35,7 +35,9 @@ jobs:
               uses: hashicorp/setup-terraform@v2.0.0
               with:
                 terraform_version: 1.5.7
-            
+            - name: List current directory
+              run: ls -R
+              
             - name: Terraform Init
               run: terraform init
 
