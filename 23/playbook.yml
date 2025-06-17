@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: azure_vm
   become: true
 #  vars_files:
 #    - secrets1.yml
