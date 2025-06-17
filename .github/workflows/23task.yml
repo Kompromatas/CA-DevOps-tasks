@@ -80,14 +80,11 @@ jobs:
             - name: checkout code
               uses: actions/checkout@v4.2.2
 
-            - name: Show VM IP
-              run: 'echo "VM IP from previous job: ${{ needs.Azure-VM.outputs.vm_ip }}"'
-
             - name: Run Ansible playbook
               run: |
                 echo "[azure_vm]" > inventory
                 echo "${{ needs.Azure-VM.outputs.vm_ip }}" >> inventory
-                cat inventory
+                export ANSIBLE_HOST_KEY_CHECKING=False
                 ansible-playbook -i inventory 23/playbook.yml --extra-vars "ansible_user=${{ secrets.AZURE_VM_USERNAME }} ansible_password=${{ secrets.AZURE_VM_PASSWORD }}"
 
     Test:
