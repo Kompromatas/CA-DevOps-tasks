@@ -84,7 +84,7 @@ jobs:
               run: |
                 echo "[azure_vm]" > hosts
                 echo "${{ env.VM_IP }}" >> hosts
-                ansible-playbook -i hosts playbook.yml --extra-vars "ansible_user=${{ secrets.AZURE_VM_USERNAME }} ansible_password=${{ secrets.AZURE_VM_PASSWORD }}"
+                ansible-playbook -i hosts 23/playbook.yml --extra-vars "ansible_user=${{ secrets.AZURE_VM_USERNAME }} ansible_password=${{ secrets.AZURE_VM_PASSWORD }}"
 
     Test:
         runs-on: ubuntu-latest
