@@ -54,6 +54,9 @@ jobs:
 
             - name: Terraform Apply
               run: terraform -chdir=23 apply -auto-approve tfplan
+
+            - name: Debug Terraform Output
+              run: terraform -chdir=23 output
             
             - name: Get VM IP
               id: tfoutput
