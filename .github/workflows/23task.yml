@@ -80,7 +80,8 @@ jobs:
             - name: Run Ansible playbook
               run: |
                 echo "[azure_vm]" > inventory
-                echo "$VM_IP" >> inventory
+                echo "$VM_IP"
+                echo "$IP" >> inventory
                 cat inventory
                 ansible-playbook -i inventory 23/playbook.yml --extra-vars "ansible_user=${{ secrets.AZURE_VM_USERNAME }} ansible_password=${{ secrets.AZURE_VM_PASSWORD }}"
 
