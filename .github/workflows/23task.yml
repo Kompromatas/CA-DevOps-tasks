@@ -37,12 +37,12 @@ jobs:
                 terraform_version: 1.5.7
             - name: List current directory
               run: ls -R
-              
+
             - name: Terraform Init
-              run: terraform init
+              run: terraform -chdir=23 init
 
             - name: Terraform Validate
-              run: terraform validate
+              run: terraform -chdir=23 validate
 
             - name: Azure Login
               uses: azure/login@v2.3.0
@@ -50,10 +50,10 @@ jobs:
                 creds: ${{ secrets.AZURE_CREDENTIALS }}
 
             - name: Terraform Plan
-              run: terraform plan -out=tfplan
+              run: terraform -chdir=23 plan -out=tfplan
 
             - name: Terraform Apply
-              run: terraform apply -auto-approve tfplan
+              run: terraform -chdir=23 apply -auto-approve tfplan
             
             - name: Get VM IP
               id: tfoutput
