@@ -54,9 +54,6 @@ jobs:
 
             - name: Terraform Apply
               run: terraform -chdir=23 apply -auto-approve tfplan
-
-            - name: Debug Terraform Output
-              run: terraform -chdir=23 output
             
             - name: Get VM IP
               id: tfoutput
@@ -69,7 +66,7 @@ jobs:
                   exit 1
                 fi
 
-                echo "✅ Parsed IP: $IP"
+                echo "✅ Parsed IP:"
                 echo "VM_IP=$IP" >> "$GITHUB_ENV"
 #              run: echo "VM_IP=$(terraform -chdir=23 output -raw public_ip)" >> $GITHUB_ENV
 
