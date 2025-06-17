@@ -57,7 +57,7 @@ jobs:
             
             - name: Get VM IP
               id: tfoutput
-              run: echo "VM_IP=$(terraform output -raw public_ip)" >> $GITHUB_ENV
+              run: echo "VM_IP=$(terraform -chdir=23 output -raw public_ip)" >> $GITHUB_ENV
 
     Prepair-and-Deploy:
         runs-on: ubuntu-latest
