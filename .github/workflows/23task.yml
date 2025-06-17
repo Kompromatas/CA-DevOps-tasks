@@ -95,4 +95,4 @@ jobs:
               uses: actions/checkout@v4.2.2
             
             - name: Verify deployment
-              run: curl -sSf http://${{ env.VM_IP }} | grep "Sveiki atvyke!"
+              run: curl -sSf http://${{ needs.Azure-VM.outputs.vm_ip }} | grep "Sveiki atvyke!"
