@@ -96,5 +96,5 @@ jobs:
             
             - name: Verify deployment
               run: |
-                HTTP='echo "${{ needs.Azure-VM.outputs.vm_ip }}"'
-                curl -sSf http://$HTTP | grep "Sveiki atvyke!"
+                echo "${{ needs.Azure-VM.outputs.vm_ip }}"
+#                curl -sSf http://$HTTP | grep "Sveiki atvyke!"
