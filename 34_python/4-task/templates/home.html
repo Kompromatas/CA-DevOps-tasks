@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Main Page</h2>
+
+    <p>
+        Wake up at 6 AM to the sweet sound of PagerDuty screaming like a dying goat. Ignore it for five minutes because sleep is life, and production can wait.
+    </p>
+
+    <p>
+        Finally, check the alert: CPU usage is at 95%. Perfectly normal. Close it. Roll over and check Slack – 247 unread messages. Half are from developers asking, “Is it deployed yet?”, the other half are from Jenkins saying, “Build failed” with no useful logs.
+    </p>
+
+    <p>
+        Make coffee strong enough to resurrect the entire microservices graveyard. Log in to Kubernetes and do your daily ritual:
+    </p>
+
+    <pre><code>kubectl get pods | grep CrashLoopBackOff</code></pre>
+
+    <p>
+        Beautiful. Everything is broken as expected.
+    </p>
+
+    <p>
+        Join the morning standup. Smile and nod as developers explain how their new feature will “definitely not affect anything in production”. Deploy it anyway. Watch the dashboards explode like fireworks on New Year’s Eve.
+    </p>
+
+    <p>
+        Spend the afternoon writing Terraform code that you know will never be applied because the cloud budget is negative, but hey, at least your plan runs cleanly. Then fix the CI/CD pipeline for the hundredth time because “someone just changed one small thing” and now Jenkins refuses to start.
+    </p>
+
+    <p>
+        End the day deleting unused resources to save money, only to realize you just terminated the production database. Oops. Spin it back up before anyone notices.
+    </p>
+
+    <p>
+        Finally, go to sleep at midnight thinking:
+    </p>
+
+    <blockquote>
+        “Tomorrow I’ll write that automation script to make my life easier.”
+    </blockquote>
+
+    <p>
+        You won’t. But it’s nice to dream.
+    </p>
+{% endblock %}

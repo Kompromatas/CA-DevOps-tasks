@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Flask Inheritance{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/about">About</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2025 Inc.</p>
+    </footer>
+</body>
+</html>
