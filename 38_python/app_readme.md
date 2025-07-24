@@ -46,4 +46,4 @@ docker compose up -d
 
 ## Helth checks on Grafana
 
-![Application health check](image/image.png)
+![Application health check](https://github.com/Kompromatas/CA-DevOps-tasks/blob/main/38_python/image/image.png)
