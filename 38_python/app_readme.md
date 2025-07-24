@@ -46,4 +46,4 @@ docker compose up -d
 
 ## Helth checks on Grafana
 
-![alt text](./image.png)
+![Application health check](image/image.png)
