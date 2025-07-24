@@ -46,4 +46,4 @@ docker compose up -d
 
 ## Helth checks on Grafana
 
-![alt text](image.png)
+Grafana dashboard showing a time series panel visualizing probe success metric for an HTTP health endpoint. The graph displays probe success values over time, with occasional drops indicating failed health checks. The Prometheus query probe_success is used, filtered for the instance http://app:5000/health and job blackbox. The interface includes options for data source selection, query editing, and refresh intervals. The environment is a dark-themed Grafana workspace with navigation sidebar and query builder visible. The emotional tone is neutral and technical.text](image.png)
