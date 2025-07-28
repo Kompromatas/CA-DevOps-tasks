@@ -3,6 +3,7 @@ import datetime
 import logging
 import sys
 
+# Setup logging configuration
 def setup_logging():
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
