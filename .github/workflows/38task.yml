@@ -15,7 +15,7 @@ jobs:
             uses: actions/checkout@v4.2.2
           
           - name: Run build
-            run: docker build -t kompromatas/app-38:latest ./38/
+            run: docker build -t kompromatas/app-38:latest .
 
           - name: Debug secrets (for testing only)
             run: |
