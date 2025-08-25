@@ -4,6 +4,7 @@ resource "aws_instance" "server1" {
   security_groups = [aws_security_group.servers.name]
   tags = {
     Name = "WebAppServer1"
+    Environment = "Dev"
   }
   user_data = <<-EOF
               #!/bin/bash
