@@ -21,7 +21,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 6.0  # arba tavo versija
+          terraform_version: 1.6.0  # arba tavo versija
 
       - name: Terraform Init
         run: terraform init
