@@ -11,9 +11,6 @@ jobs:
     name: Terraform Init, Plan & Apply
     runs-on: ubuntu-latest
 
-    env:
-      TF_VAR_example: "value"  # jei turi kintamųjų
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
