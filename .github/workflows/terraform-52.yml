@@ -22,13 +22,17 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ./52-terraform
 
       - name: Terraform Format Check
         run: terraform fmt -check
+        working-directory: ./52-terraform
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: ./52-terraform
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
+        working-directory: ./52-terraform
