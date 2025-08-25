@@ -20,6 +20,15 @@ jobs:
         with:
           terraform_version: 1.6.0  # arba tavo versija
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::034362059178:role/github-actions-role
+          aws-region: eu-central-1
+
+      - name: Verify AWS Access
+        run: aws sts get-caller-identity
+
       - name: Terraform Init
         run: terraform init
         working-directory: ./52-terraform
